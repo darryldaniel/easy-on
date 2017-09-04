@@ -4,7 +4,6 @@
   "description": "A simple raspberry pi project for turning an LED on and off via an express server using resin.io",
   "main": "main.js",
   "scripts": {
-    "preinstall": "bash deps.sh",
     "start": "node main.js"
   },
   "repository": {
