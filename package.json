@@ -1,0 +1,20 @@
+{
+  "name": "easy-on",
+  "version": "0.0.1",
+  "description": "A simple raspberry pi project for turning an LED on and off via an express server using resin.io",
+  "main": "main.js",
+  "scripts": {
+    "preinstall": "bash deps.sh",
+    "start": "node main.js"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "author": "Darryl Daniel <darrylndaniel@gmail.com>",
+  "license": "GNU 3",
+  "dependencies": {
+    "express": "^4.14.0",
+    "pi-pins": "^1.0.2",
+    "pug": "^2.0.0-rc.3"
+  }
+}
