@@ -3,11 +3,8 @@
 const express = require('express');
 const app = express();
 
-const onoff = require('onoff'),
-  Gpio = onoff.Gpio;
-
-let ledOn = false;
-  led = new Gpio(4, 'out');
+let ledOn = false,
+  led = require('pi-pins').connect(22);
 
 app.set('view engine', 'pug');
 
@@ -33,10 +30,9 @@ app.post('/led', (req, res) => {
   let value = ledOn ? 0 : 1;
 
   ledOn = !ledOn;
-  
-  led.write(value, () => {
-    res.redirect('/');
-  });
+
+  led.value(value);
+  res.redirect('/');
 });
 
 //start a server on port 80 and log its start to our console
