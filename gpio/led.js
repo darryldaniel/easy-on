@@ -6,6 +6,7 @@ let led,
 function init(pinNumber) {
   led = GPIO.connect(pinNumber);
   led.mode('out');
+  return this;
 }
 
 function toggle() {
