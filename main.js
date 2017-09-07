@@ -6,6 +6,8 @@ const app = express();
 let ledOn = false,
   led = require('pi-pins').connect(22);
 
+led.mode('out');
+
 app.set('view engine', 'pug');
 
 // reply to request with "Hello World!"
