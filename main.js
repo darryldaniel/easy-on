@@ -6,6 +6,20 @@ const GPIO = require('pi-pins');
 let led,
   ledOn = false;
 
+const initLed = (pinNumber) => {
+  led = GPIO.connect(pinNumber);
+  led.mode('out');
+}
+
+const toggleLed = () => {
+  ledOn = !ledOn;
+  led.write(ledOn);
+}
+
+const ledStatus = () => {
+  return ledOn ? 'ON' : 'OFF';
+}
+
 initLed(22);
 
 app.set('view engine', 'pug');
@@ -29,17 +43,3 @@ const server = app.listen(80, function () {
   var port = server.address().port;
   console.log("Hey… I’m a node.js server running in a container and listening on port: ", port);
 });
-
-const initLed = (pinNumber) => {
-  led = GPIO.connect(pinNumber);
-  led.mode('out');
-}
-
-const toggleLed = () => {
-  ledOn = !ledOn;
-  led.write(ledOn);
-}
-
-const ledStatus = () => {
-  return ledOn ? 'ON' : 'OFF';
-}
