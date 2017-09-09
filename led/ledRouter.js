@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
 
 router.post('/led', (req, res) => {
   ledOn = !ledOn;
-  led.write(ledOn);
+  led.value(ledOn);
   res.redirect('/');
 });
 
