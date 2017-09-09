@@ -30,16 +30,16 @@ const server = app.listen(80, function () {
   console.log("Hey… I’m a node.js server running in a container and listening on port: ", port);
 });
 
-function initLed(pinNumber) {
+const initLed = (pinNumber) => {
   led = GPIO.connect(pinNumber);
   led.mode('out');
 }
 
-function toggleLed() {
+const toggleLed = () => {
   ledOn = !ledOn;
   led.write(ledOn);
 }
 
-function ledStatus() {
+const ledStatus = () => {
   return ledOn ? 'ON' : 'OFF';
 }
