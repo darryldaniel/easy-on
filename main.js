@@ -2,7 +2,7 @@
 
 const express = require('express');
 const app = express();
-const ledRouter = require('./led/ledRouter');
+const ledRouter = require('./led/router');
 
 app.set('view engine', 'pug'); 
 app.use(ledRouter);

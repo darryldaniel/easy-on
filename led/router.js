@@ -4,21 +4,19 @@ const express = require('express'),
 const GPIO = require('pi-pins'),
   led = GPIO.connect(22);
 
-let ledOn = false;
+const led = require('./gpio').init(22);
 
-led.mode('out');
 
 router.get('/', (req, res) => {
   res.render('index', {
     title: 'Pi Home',
     heading: 'Press the button to toggle LED',
-    ledStatus: `The LED is ${ledOn ? 'ON' : 'OFF'}`
+    ledStatus: `The LED is ${led.status()}`
   });
 });
 
 router.post('/led', (req, res) => {
-  ledOn = !ledOn;
-  led.value(ledOn);
+  led.toggle();
   res.redirect('/');
 });
 
