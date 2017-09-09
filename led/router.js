@@ -1,9 +1,6 @@
 const express = require('express'),
   router = express.Router();
 
-const GPIO = require('pi-pins'),
-  led = GPIO.connect(22);
-
 const led = require('./gpio').init(22);
 
 
