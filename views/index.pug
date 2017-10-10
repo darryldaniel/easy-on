@@ -2,8 +2,10 @@ html
     head 
         title= title
         link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css')
+        link(rel='stylesheet' href='main.css')
     body 
-        h1= heading
+        .jumbotron.heading-container
+            h1= heading
         form(action='/led' method='POST')
-            button TOGGLE LED
-        p= ledStatus
+            button.toggle-btn.btn.btn-primary TOGGLE LED
+        p.status-text= ledStatus

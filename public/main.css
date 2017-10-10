@@ -1,0 +1,12 @@
+.heading-container {
+  border-radius: 8px;
+  margin: 60px 60px 20px 60px;
+}
+
+.toggle-btn {
+  margin: 20px 60px;
+}
+
+.status-text {
+  margin-left: 60px;
+}

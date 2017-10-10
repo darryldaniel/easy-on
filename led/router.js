@@ -7,7 +7,7 @@ const led = require('./gpio').init(22);
 router.get('/', (req, res) => {
   res.render('index', {
     title: 'Pi Home',
-    heading: 'Press the button to toggle LED',
+    heading: 'Easy-On',
     ledStatus: `The LED is ${led.status()}`
   });
 });
